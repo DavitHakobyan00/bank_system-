@@ -1,3 +1,5 @@
+package model;
+
 public class Main {
     public static void main(String[] args) {
         Address address1 = new Address("Armenia", "Yerevan", "Yerevan", "Abovyan", "15A");
