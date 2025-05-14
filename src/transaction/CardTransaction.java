@@ -1,6 +1,8 @@
 package transaction;
 
-import exception.InsufficientFundsException;
+
+import enums.CardStatus;
+import model.CardAccount;
 
 public class CardTransaction {
 
@@ -16,10 +18,7 @@ public class CardTransaction {
         if (card.getCardStatus() == CardStatus.BLOCKED) {
             throw new IllegalStateException("Card is blocked.");
         }
-        if (card.getBalance() < amount) {
-            throw new InsufficientFundsException("Not enough balance.");
-        }
-        card.setBalance(card.getBalance() - amount);
+
     }
 
     public void transfer(CardAccount from, CardAccount to, double amount) {
@@ -27,13 +26,7 @@ public class CardTransaction {
         deposit(to, amount);
     }
 
-    public void addCard(CardHolder holder, CardAccount card) {
-        if (holder.getCardAccounts().size() >= 3) {
-            System.out.println("Cannot add more than 3 cards.");
-            return;
-        }
-        holder.getCardAccounts().add(card);
-    }
+
 
     public void blockCard(CardAccount card) {
         card.setCardStatus(CardStatus.BLOCKED);

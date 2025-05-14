@@ -1,5 +1,8 @@
 package model;
-import model.enums.*;
+import enums.CardStatus;
+import enums.CardType;
+import enums.Currency;
+import model.*;
 public class CardAccount {
         private String accountNumber;
         private String cvv;

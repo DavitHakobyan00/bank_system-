@@ -1,4 +1,10 @@
-package model;
+import enums.CardType;
+import enums.Currency;
+import model.Address;
+import model.BankAccount;
+import model.CardAccount;
+import model.CardHolder;
+import transaction.CardTransaction;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,7 +27,7 @@ public class Main {
         cardTransaction.addCard(holder1, card1);
         cardTransaction.addCard(holder2, card2);
 
-        BankAccountTransaction bankTx = new BankAccountTransaction();
+        bankAccountTransaction bankTx = new bankAccountTransaction();
         bankTx.deposit(account1, 100000);
         bankTx.deposit(account2, 50000);
 
